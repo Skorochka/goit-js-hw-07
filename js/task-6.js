@@ -1,12 +1,13 @@
 const inputEl = document.querySelector('#validation-input')
-const checkChange = inputEl.addEventListener('input', onInputChange)
+const checkChange = inputEl.addEventListener('blur', onInputChange)
 
 
 function onInputChange(event) {
 
-    if (event.currentTarget.value.length !== Number(inputEl.dataset.length)) {
-        inputEl.classList.add('invalid'), inputEl.classList.remove('valid')
+    if (event.currentTarget.value.length === Number(inputEl.dataset.length)) {
+        inputEl.classList.add('valid'), inputEl.classList.remove('invalid')
+
     } else {
-        inputEl.classList.replace('invalid', 'valid') }
+        inputEl.classList.add('invalid'), inputEl.classList.remove('valid') }
 }
 
